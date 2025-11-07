@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-container">
+    <!-- Left side: Registration Form -->
+    <div class="form-container">
+      <form id="registrationForm" class="registration-form">
+        <h2>ATM Registration</h2>
+
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="mobile">Mobile</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" required>
+
+        <label for="accountNumber">Account No.</label>
+        <input type="text" id="accountNumber" name="accountNumber" placeholder="Account number" required>
+
+        <label for="cardType">Card Type</label>
+        <select id="cardType" name="cardType" required>
+          <option value="">Select Type</option>
+          <option value="Debit">Debit</option>
+          <option value="Credit">Credit</option>
+        </select>
+
+        <label for="pin">ATM PIN</label>
+        <input type="password" id="pin" name="pin" placeholder="4-digit PIN" maxlength="4" required>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Right side: ATM Card Image -->
+    <div class="image-section">
+      <img src="C:\Users\Sagar\Desktop\atm\images\card.jpg" alt="ATM Card">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
