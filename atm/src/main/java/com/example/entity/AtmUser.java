@@ -1,11 +1,15 @@
-package com.example.atm.entity;
+package com.example.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "atm_registration")
 public class AtmUser {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,9 +22,7 @@ public class AtmUser {
     private String pin;
 
     @Column(unique = true)
-    private String cardNumber; // Auto-generated card number
-
-    public AtmUser() {}
+    private String cardNumber;
 
     // Getters & Setters
     public Long getId() { return id; }

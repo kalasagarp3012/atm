@@ -1,12 +1,19 @@
-package com.example.atm.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import com.example.atm.entity.AtmUser;
-import com.example.atm.repository.AtmRepository;
+package com.example.controller;
 
 import java.util.Optional;
 import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.dto.LoginRequest;
+import com.example.entity.AtmUser;
+import com.example.repository.AtmRepository;
 
 @RestController
 @RequestMapping("/api/atm")
@@ -16,36 +23,34 @@ public class AtmController {
     @Autowired
     private AtmRepository atmRepository;
 
-    // ---------------- Register User ----------------
     @PostMapping("/register")
     public AtmUser registerUser(@RequestBody AtmUser user) {
-        // Generate 16-digit unique card number
         String cardNumber = generateCardNumber();
         user.setCardNumber(cardNumber);
-
-        // Save to DB
         return atmRepository.save(user);
     }
 
-    // ---------------- User Login ----------------
     @PostMapping("/login")
-    public String loginUser(@RequestBody AtmUser loginRequest) {
-        Optional<AtmUser> existing = atmRepository.findByCardNumberAndPin(
-                loginRequest.getCardNumber(),
-                loginRequest.getPin()
-        );
+    public ResponseEntity<?> loginUser(@RequestBody LoginRequest req) {
+        if (req.getCardNumber() == null || req.getPin() == null) {
+            return ResponseEntity.badRequest().body("Card number and PIN are required");
+        }
 
-        if (existing.isPresent()) {
-            return "✅ Login successful! Welcome, " + existing.get().getFullname();
+        Optional<AtmUser> opt = atmRepository.findByCardNumberAndPin(req.getCardNumber(), req.getPin());
+        if (opt.isPresent()) {
+            // return user details (without PIN) or a success message
+            AtmUser user = opt.get();
+            // Remove pin before returning for safety
+            user.setPin(null);
+            return ResponseEntity.ok(user);
         } else {
-            return "❌ Invalid card number or PIN!";
+            return ResponseEntity.status(401).body("Invalid card number or PIN");
         }
     }
 
-    // ---------------- Helper Method ----------------
     private String generateCardNumber() {
         Random random = new Random();
-        StringBuilder cardNum = new StringBuilder("5"); // e.g., start with 5
+        StringBuilder cardNum = new StringBuilder("5");
         for (int i = 0; i < 15; i++) {
             cardNum.append(random.nextInt(10));
         }
