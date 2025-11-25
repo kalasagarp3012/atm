@@ -14,8 +14,7 @@ setTimeout(typeEffect, 500);
 
 // Button click animation
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  alert("Redirecting to registration page...");
-  window.location.href = "index.html"; // or login.html
+  window.location.href = "../login/login.html";
 });
 
 // Navbar color change on scroll
