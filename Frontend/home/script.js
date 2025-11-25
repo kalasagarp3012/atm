@@ -21,17 +21,20 @@ form.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       const user = await response.json();
-      
-      // ✅ Show card number popup
-      alert(`✅ Registration successful!\n\nYour Card Number is:\n💳 ${user.cardNumber}\n\nPlease save it for login.`);
-      
-      // Clear form after success
+      console.log(user);
+
+      if (user.cardNumber) {
+        alert(`✅ Registration successful!\n\nYour Card Number: 💳 ${user.cardNumber}\n\nSave it for login.`);
+      } else {
+        alert("⚠️ Registration successful, but card number missing. Check backend.");
+      }
       form.reset();
     } else {
-      alert("❌ Registration failed! Please check backend or MySQL connection.");
+      alert("❌ Registration failed. Check backend server or MySQL connection.");
     }
   } catch (error) {
-    console.error("Error:", error);
-    alert("⚠️ Something went wrong. Check if your backend server is running.");
+    console.error(error);
+    alert("⚠️ Server not reachable. Make sure Spring Boot is running.");
   }
 });
+

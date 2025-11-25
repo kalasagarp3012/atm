@@ -1,0 +1,76 @@
+/* --------------------------
+   ATM Login Page Styling
+--------------------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body background gradient */
+body {
+  background: linear-gradient(120deg, #0d396f, #bad6f4, #b8e5ee);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 23px;
+  color: #dbe4f1;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Login Form Container */
+form {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 40px 45px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* Labels */
+form label {
+  display: block;
+  text-align: left;
+  font-weight: 500;
+  color: #0a2342;
+  margin-bottom: 5px;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0d396f;
+  border: none;
+  border-radius: 8px;
+  color: #fff;                                            
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
