@@ -38,9 +38,9 @@ form.addEventListener('submit', async (e) => {
   }
 
 
-
+/*
    // ⭐ Add JS for the Create Account button -->
    document.getElementById("createAccountBtn").addEventListener("click", () => {
       window.location.href = "../register/index.html";
-    });
+    }); */
 });

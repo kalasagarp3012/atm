@@ -93,8 +93,7 @@ body {
 }
 
 .hero-text button:hover {
-  background-color:  #dde9eb;
-  color: #0a2342;
+  color: #ebeef3;
 }
 
 .hero-text button:hover a {

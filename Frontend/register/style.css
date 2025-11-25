@@ -55,13 +55,13 @@ body {
 
 .registration-form input:focus,
 .registration-form select:focus {
-  border-color: #007bff;
+  border-color:  #0d396f;;
   outline: none;
 }
 
 .registration-form button {
   width: 100%;
-  background-color: #007bff;
+  background-color:  #0d396f;
   color: #fff;
   border: none;
   border-radius: 6px;
