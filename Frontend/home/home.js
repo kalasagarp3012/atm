@@ -14,7 +14,8 @@ setTimeout(typeEffect, 500);
 
 // Button click animation
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  window.location.href = "../login/login.html";
+  // Open login page in a new tab
+  window.open("../login/login.html", "_blank");
 });
 
 // Navbar color change on scroll

@@ -36,11 +36,12 @@ form.addEventListener('submit', async (e) => {
     console.error(err);
     msg.textContent = 'Cannot reach server. Make sure backend is running.';
   }
-
-
-/*
-   // ⭐ Add JS for the Create Account button -->
-   document.getElementById("createAccountBtn").addEventListener("click", () => {
-      window.location.href = "../register/index.html";
-    }); */
 });
+
+// Open register page in a new tab when Create Account is clicked
+const createBtn = document.getElementById("createAccountBtn");
+if (createBtn) {
+  createBtn.addEventListener("click", () => {
+    window.open("../register/index.html", "_blank");
+  });
+}
