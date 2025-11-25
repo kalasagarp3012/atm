@@ -1,0 +1,7 @@
+/atm/target/
+**/target/
+*.class
+.idea/
+*.log
+.DS_Store
+/.vscode/
