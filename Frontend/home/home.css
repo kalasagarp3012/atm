@@ -78,7 +78,7 @@ body {
 .hero-text button {
   margin-top: 25px;
   padding: 12px 25px;
-  background-color: #007bff;
+  background-color:  #0d396f;
   border: none;
   color: white;
   border-radius: 6px;
@@ -87,8 +87,18 @@ body {
   transition: background-color 0.3s ease;
 }
 
+.hero-text button a {
+  color: white;
+  text-decoration: none;
+}
+
 .hero-text button:hover {
-  background-color: #0056b3;
+  background-color:  #dde9eb;
+  color: #0a2342;
+}
+
+.hero-text button:hover a {
+  color: #0a2342;
 }
 
 .hero-image img {
