@@ -68,11 +68,20 @@ body {
   padding: 8px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 .registration-form button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button click/active motion */
+.registration-form button:active {
+  transform: scale(0.98) translateY(1px);
+  background-color: #003d82;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* Right Side: Image */

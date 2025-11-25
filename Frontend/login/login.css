@@ -11,7 +11,7 @@
 
 /* Body background gradient */
 body {
-  background: linear-gradient(120deg, #0d396f, #bad6f4, #b8e5ee);
+   background: linear-gradient(120deg, #0d396f, #bad6f4, #b8e5ee);
   background-size: 300% 300%;
   animation: gradientShift 8s ease infinite;
   height: 100vh;
@@ -72,5 +72,19 @@ button {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #0a2a52;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button click/active motion */
+button:active {
+  transform: scale(0.98) translateY(1px);
+  background-color: #082042;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
