@@ -7,6 +7,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  color: #0a2342;
 }
 
 /* Main Flexbox container */
@@ -30,7 +31,7 @@ body {
 
 .registration-form h2 {
   text-align: center;
-  color: #333;
+  color: #0a2342;
   margin-bottom: 20px;
 }
 

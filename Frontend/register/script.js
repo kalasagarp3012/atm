@@ -29,6 +29,8 @@ form.addEventListener('submit', async (event) => {
         alert("⚠️ Registration successful, but card number missing. Check backend.");
       }
       form.reset();
+      // After successful registration, open login page in a new tab
+      window.open('../login/login.html', '_blank');
     } else {
       alert("❌ Registration failed. Check backend server or MySQL connection.");
     }

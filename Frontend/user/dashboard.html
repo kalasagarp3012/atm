@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DigitalATM Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">DigitalATM</h2>
+
+    <nav class="menu" role="navigation" aria-label="Main navigation">
+      <a id="nav-dashboard" class="active" href="#" data-target="./dashboard.html">🏠 Dashboard</a>
+      <a id="nav-transfer" href="#" data-target="../transfer/transfer.html">🔁 Transfers </a>
+      <a id="nav-transactions" href="#" data-target="../transactions/transactions.html">📃 Transactions</a>
+      <a id="nav-accounts" href="#" data-target="../accounts/accounts.html">💳 Card</a>
+      <!-- Investments removed per request -->
+    </nav>
+
+    <div class="bottom-menu">
+      <a href="#" id="settingsBtn">⚙ Settings</a>
+      <a href="#" id="logoutBtn">⇦ Log out</a>
+    </div>
+  </aside>
+
+  <!-- MAIN DASHBOARD AREA -->
+  <main class="content">
+    <header class="topbar">
+      <h1>Dashboard</h1>
+
+      <div class="user-info">
+        <span id="userName">User Name</span>
+        <button id="profileBtn" class="profile-btn" title="Update profile picture">
+          <img id="profileImage" src="" alt="Profile" class="profile-img">
+        </button>
+        <input type="file" id="profileInput" accept="image/*" style="display:none">
+      </div>
+    </header>
+
+    <section class="dashboard-grid">
+
+      <!-- TOTAL BALANCE BLOCK -->
+      <div class="card balance-card">
+        <h3>Total Balance</h3>
+        <h1 id="balanceAmount">₹0.00</h1>
+        <p>Income: <strong>₹0.00</strong> — Expenses: <strong>₹0.00</strong></p>
+      </div>
+
+      <!-- TOTAL SAVINGS BLOCK -->
+      <div class="card savings-card">
+        <h3>Total Savings</h3>
+        <h1 id="savingAmount">₹0.00</h1>
+      </div>
+
+      <!-- Recent Transactions -->
+      <div class="card transactions-card">
+        <h3>Recent Transactions</h3>
+        <ul id="transactionList">
+          <!-- JS inserts items here -->
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

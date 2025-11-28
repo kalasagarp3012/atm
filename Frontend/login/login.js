@@ -24,8 +24,8 @@ form.addEventListener('submit', async (e) => {
       const user = await res.json();
       // save minimal info locally to show on dashboard
       sessionStorage.setItem('atmUser', JSON.stringify(user));
-      // go to dashboard page
-      window.location.href = 'dashboard.html';
+      // go to dashboard page (same tab)
+      window.location.href = '../user/dashboard.html';
     } else if (res.status === 401) {
       msg.textContent = 'Invalid card number or PIN';
     } else {
